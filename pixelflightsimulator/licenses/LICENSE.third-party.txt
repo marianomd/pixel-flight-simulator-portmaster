@@ -1,0 +1,57 @@
+# サードパーティ表記 / Third-party notices
+
+PFS が同梱・利用している第三者の成果物とその出所です。
+
+---
+
+## umplus_j10r.bdf（日本語ビットマップフォント）
+
+メニューと説明文の日本語表示に使用しています。
+
+| | |
+|---|---|
+| ファイル | `umplus_j10r.bdf` |
+| 出所 | [Pyxel](https://github.com/kitao/pyxel) の `pyxel/examples/assets/` に同梱されているものと**バイト単位で同一** |
+| BDFヘッダの表記 | `FOUNDRY "umplus"` / `COPYRIGHT "Copyright (C) 2002-2004 COZ"` |
+| 系統 | U-M+ / M+ 系のビットマップフォント |
+
+```
+FOUNDRY   "umplus"
+COPYRIGHT "Copyright (C) 2002-2004 COZ"
+```
+
+Used for Japanese text in the menus. The file is byte-identical to the one
+bundled with Pyxel's example assets. The BDF header credits COZ (2002–2004),
+foundry "umplus" — the U-M+ / M+ bitmap font lineage.
+
+---
+
+## Pyxel
+
+本作は [Pyxel](https://github.com/kitao/pyxel)（レトロゲームエンジン）の上で
+動作します。Pyxel 自体は同梱していませんが、実行に必要です。
+
+- MIT License / Copyright (c) 2018-2026 Takashi Kitao
+
+---
+
+## 管制通信の音声（`pfs_assets/atc/`）
+
+macOS の音声合成（`say` コマンド）で生成し、ffmpeg で無線らしく加工したものです。
+生成手順は `make_atc.py` にあります。
+
+The ATC clips are synthesised with the macOS `say` command and processed with
+ffmpeg. See `make_atc.py` for the recipe.
+
+---
+
+## 本作のオリジナル素材
+
+次のものは本作のために作られたもので、上記の第三者成果物には含まれません。
+
+- `pfs_assets/bgm/` — BGM
+- `Operator.png` / `Pilot.png` — 会話画面の顔絵
+- `title.py` に埋め込まれたタイトル画像
+- ソースコード一式
+
+These are original to this project and are not third-party works.

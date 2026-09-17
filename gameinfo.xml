@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gameList>
+  <game>
+    <path>./Pixel Flight Simulator.sh</path>
+    <name>Pixel Flight Simulator</name>
+    <desc>Fly light aircraft, carry cargo and passengers, search for the missing, and land in a 16-colour pixel-art flight simulator.</desc>
+    <releasedate>20260826T000000</releasedate>
+    <developer>game-de-it</developer>
+    <publisher>game-de-it</publisher>
+    <genre>Simulation</genre>
+    <image>./pixelflightsimulator/screenshot.png</image>
+  </game>
+</gameList>

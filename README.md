@@ -27,8 +27,7 @@ PortMaster downloads the `pyxel_2.9.5_python_3.11` runtime automatically
 on the first launch if it is not already installed.
 
 For square displays, choose **OPTIONS > GRAPHICS > ASPECT > 1:1**, then
-restart the game. On RK3326 devices, 30 FPS is recommended if 60 FPS is
-not stable.
+restart the game.
 
 ## Controls
 

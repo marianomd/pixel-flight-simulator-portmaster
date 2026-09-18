@@ -1,0 +1,45 @@
+"""会話の顔絵。make_portraits.py が生成する（手で編集しない）。
+
+12〜15番はUI用の固定色。顔絵は0〜11番の12色。
+"""
+import base64
+import zlib
+
+import pyxel
+
+SIZE = 80
+
+PALETTE = (
+    0xFFFFFF,
+    0x000000,
+    0xD67134,
+    0x6483B5,
+    0x4C4846,
+    0xC7BBB1,
+    0x923A12,
+    0x987D73,
+    0xEFA96D,
+    0x4C1D0B,
+    0x495C86,
+    0x182137,
+    0x0A0C14,
+    0xF0F4F0,
+    0x4CE896,
+    0xF0B030,
+)
+
+_DATA = (
+    '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',
+)
+_CACHE = {}
+
+
+def image(who):
+    """話者の顔絵。初回だけ展開する。"""
+    if who in _CACHE:
+        return _CACHE[who]
+    img = pyxel.Image(SIZE, SIZE)
+    img.data_ptr()[:] = zlib.decompress(base64.b64decode(_DATA[who]))
+    _CACHE[who] = img
+    return img

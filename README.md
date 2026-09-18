@@ -29,6 +29,50 @@ on the first launch if it is not already installed.
 For square displays, choose **OPTIONS > GRAPHICS > ASPECT > 1:1**, then
 restart the game.
 
+## Building and releasing
+
+The release process is reproducible from the original game's source. It
+downloads the selected upstream revision, runs upstream's `make_pyxapp.py` in
+an isolated Pyxel 2.9.5 environment, builds the PortMaster ZIP, validates it,
+and writes its checksum and release notes into `dist/`.
+
+The Python source included in the currently published `.pyxapp` is also kept
+unpacked under `src/pfs/`, so it can be reviewed directly on GitHub. A publish
+run refreshes this snapshot together with the bundled game and licenses.
+
+Preview the latest upstream release without changing tracked files:
+
+```sh
+python scripts/release.py
+```
+
+Build a specific upstream tag:
+
+```sh
+python scripts/release.py --upstream-ref v1.0.1
+```
+
+After reviewing the files in `dist/`, publish from a clean `main` branch:
+
+```sh
+python scripts/release.py --publish
+```
+
+Publishing updates the vendored game bundle and upstream license copies,
+updates the provenance in this README, commits and pushes those changes, then
+creates the next `vX.Y.Z-portmaster.N` GitHub Release using `gh`. Python, Git,
+GitHub CLI authentication, and network access are required. The build script
+creates and reuses its own virtual environment; Pyxel does not need to be
+installed globally.
+
+If that upstream version already has a PortMaster release, publishing stops to
+avoid an accidental duplicate. An intentional port-only revision can specify
+the next tag explicitly, for example:
+
+```sh
+python scripts/release.py --publish --upstream-ref v1.0.1 --release-tag v1.0.1-portmaster.2
+```
+
 ## Controls
 
 | Button | Action |

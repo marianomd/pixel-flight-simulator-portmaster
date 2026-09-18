@@ -11,9 +11,17 @@ PortMaster Pyxel 2.9.5 / Python 3.11 runtime.
 ## Installation
 
 1. Download `pixelflightsimulator.zip` from the latest GitHub Release.
-2. Extract it directly into the `ports` directory on the games card.
-3. Restart or refresh EmulationStation.
-4. Open **Ports > Pixel Flight Simulator**.
+2. Copy the ZIP **without extracting it** into PortMaster's `autoinstall`
+   directory. On ArchR this is normally
+   `/storage/roms/ports/PortMaster/autoinstall/`.
+3. Start PortMaster and wait for the automatic installation to finish.
+4. Restart or refresh EmulationStation, then open
+   **Ports > Pixel Flight Simulator**.
+
+Other firmware may place the `autoinstall` directory elsewhere; see the
+[PortMaster FAQ](https://portmaster.games/faq.html) for the corresponding
+path. Extracting the package directly into `ports` is only a fallback manual
+installation method.
 
 PortMaster downloads the `pyxel_2.9.5_python_3.11` runtime automatically
 on the first launch if it is not already installed.
